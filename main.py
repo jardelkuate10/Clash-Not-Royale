@@ -5,12 +5,14 @@ pygame.init()
 
 width, height = 576, 1000
 screen = pygame.display.set_mode((width, height))
-pygame.display.set_caption('Blokduku')
+pygame.display.set_caption('ClashNotRoyal')
 
 running = True
 
-side = Side(screen,'red', 'top')
-side2 = Side(screen, 'green', 'bottom')
+grass = (44, 134, 47)
+
+side = Side(screen,grass, 'top')
+side2 = Side(screen, grass, 'bottom')
 
 while running:
 
