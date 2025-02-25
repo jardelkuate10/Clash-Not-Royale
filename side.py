@@ -35,11 +35,11 @@ class Side:
 
 
     def load_towers(self):
-        main = MainTower(self.screen, self.main_x, self.main_y, 'white', self.position)
+        self.main_tower = MainTower(self.screen, self.main_x, self.main_y, 'white', self.position)
         s1 =  SideTower(self.screen, self.s1_x, self.s_y, 'white', self.position)
         s2 = SideTower(self.screen, self.s2_x, self.s_y, 'white', self.position)
 
-        self.towers.append(main)
+        self.towers.append(self.main_tower)
         self.towers.append(s1)
         self.towers.append(s2)
 

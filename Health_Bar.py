@@ -6,7 +6,7 @@ class HealthBar:
     self.y = y
     self.w = w
     self.h = h
-    self.hp = max_hp
+    self.hp = 100
     self.max_hp = max_hp
 
   def draw(self, surface):

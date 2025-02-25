@@ -29,11 +29,11 @@ class MainTower:
         elif self.position == 'bottom':
             self.health_bar = HealthBar(self.x + 5, self.y + size + 10, size - 10, 10, 100)
 
-        self.health_bar.hp = 70
+        #self.health_bar.hp = 70
 
         #self.health_bar = HealthBar(self.x + 5, self.y, size - 10, 10, 100)
 
-        self.rect = pygame.Rect(x, y, 60, 60)
+        self.rect = pygame.Rect(x, y, size, size)
 
         #ratio = self.hp / self.max_hp
         #self.health = pygame.Rect(self.health_x, self.health_y , 50 * ratio, 10)
