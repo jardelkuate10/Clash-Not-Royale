@@ -1,0 +1,12 @@
+Create card class
+create deck class
+deck class loads cards
+then the deck is given to the character_selector class
+the characrter_selector chooses cards in the deck to display
+
+the card class contains a character class
+the card is a rect that displays the character rect inside of it
+the card can be dragged and dropped
+if the card is picked up it turns into the character
+if you let go and are colliderect with the character_selector then the card goes back into place (clamp_ip)
+while dragging if the character is colliderect with myside then the character is placed at the mouse x and y shifted by half the character size

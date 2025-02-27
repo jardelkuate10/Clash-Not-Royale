@@ -2,10 +2,12 @@ import pygame
 from side_tower import SideTower
 from main_tower import MainTower
 
-length = 1000
+width, height = 600, 1000
 main_gap = 100
 side_gap = 175
-
+main_size = 60
+side_size = 30
+tower_gap = 2*main_size
 
 class Side:
 
@@ -15,20 +17,20 @@ class Side:
         self.color = color
         self.position = position
         self.towers = []
-        self.main_x = 258
-        self.s1_x = 129
-        self.s2_x = 417
+        self.main_x = width/2 - main_size/2
+        self.s1_x = self.main_x - tower_gap - side_size
+        self.s2_x = self.main_x + tower_gap + main_size
         self.main_y = 0
         self.s_y = 0
 
         if self.position == 'top':
             self.main_y = main_gap
             self.s_y = side_gap
-            self.rect = pygame.Rect(0, 0, 576, 500)
+            self.rect = pygame.Rect(0, 0, width, height/2)
         elif self.position == 'bottom':
-            self.main_y = length - main_gap
-            self.s_y = length - side_gap
-            self.rect = pygame.Rect(0, 500, 576, 500)
+            self.main_y = height - main_gap - main_size
+            self.s_y = height - side_gap - side_size
+            self.rect = pygame.Rect(0, height/2, width, height/2)
 
         self.main_tower = MainTower(self.screen, self.main_x, self.main_y, 'white', self.position)
         self.side_tower_1 = SideTower(self.screen, self.s1_x, self.s_y, 'white', self.position)

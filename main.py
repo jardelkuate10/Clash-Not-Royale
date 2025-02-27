@@ -1,5 +1,6 @@
 import pygame
 
+from character_selector import CharacterSelector
 import main_tower
 from base_character import BaseCharacter
 from side import Side
@@ -9,8 +10,8 @@ pygame.init()
 
 clock = pygame.time.Clock()
 fps = 60
-width, height = 576, 1000
-screen = pygame.display.set_mode((width, height))
+screen_width, game_width, height = 1100, 600, 1000
+screen = pygame.display.set_mode((screen_width, height))
 pygame.display.set_caption('ClashNotRoyal')
 
 running = True
@@ -19,9 +20,9 @@ grass = (44, 134, 47)
 
 side1 = Side(screen, grass, 'top')
 side2 = Side(screen, grass, 'bottom')
-#guy = BaseCharacter(screen, width/2, height/2, 'black', side2, side1)
+selector = CharacterSelector(screen, side2, side1)
 
-dps = Shooter(screen, width/2, height/2, 'black', side2, side1)
+#dps = Shooter(screen, game_width/2, game_width/2, 'black', side2, side1)
 
 while running:
 
@@ -30,17 +31,17 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    #guy.move()
-
-    dps.move()
-    dps.fire_projectile()
-    dps.update()
+    selector.update()
+    # selector.dps.move()
+    # selector.dps.fire_projectile()
+    # selector.dps.update()
 
     screen.fill('black')
     side1.draw()
     side2.draw()
+    selector.draw()
     #guy.draw()
-    dps.draw()
+    #dps.draw()
 
     # pygame.display.update()
     pygame.display.flip()

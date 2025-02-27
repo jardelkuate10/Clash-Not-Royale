@@ -21,7 +21,7 @@ class BaseTower:
         if self.position == 'top':
             self.health_bar = HealthBar(self, self.x + x_buf, self.y - y_buf, w_buf, h_buf)
         elif self.position == 'bottom':
-            self.health_bar = HealthBar(self, self.x + x_buf, self.y + size + y_buf, w_buf, h_buf)
+            self.health_bar = HealthBar(self, self.x + x_buf, self.y + size + y_buf/2 , w_buf, h_buf)
 
     def draw(self):
         pygame.draw.rect(self.screen, self.color, self.rect)

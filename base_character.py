@@ -22,13 +22,13 @@ class BaseCharacter:
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_w]:
-            self.rect = self.rect.move(0, -self.speed)
+            self.rect.y -= self.speed
         if keys[pygame.K_a]:
-            self.rect = self.rect.move(-self.speed, 0)
+            self.rect.x -= self.speed
         if keys[pygame.K_s]:
-            self.rect = self.rect.move(0, self.speed)
+            self.rect.y += self.speed
         if keys[pygame.K_d]:
-            self.rect = self.rect.move(self.speed, 0)
+            self.rect.x += self.speed
 
         self.update()
 
