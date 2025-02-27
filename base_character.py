@@ -12,7 +12,7 @@ class BaseCharacter:
         self.enemy_side = enemy_side
         self.speed = 1
         self.dmg = 50
-        self.rect = pygame.Rect(x, y, self.size, self.size)
+        self.rect = pygame.Rect(x, y, self.size, self.size  )
 
     def draw(self):
         pygame.draw.rect(self.screen, self.color, self.rect)
