@@ -58,5 +58,5 @@ class Shooter:
             self.last_shot_time = current_time  # Reset shot timer
 
             direction = 'up'
-            projectile = Projectile(self.screen, self.rect.centerx - 4, self.rect.centery - 25, 'red', 10, 100, direction)
+            projectile = Projectile(self.screen, self.rect.centerx - 4, self.rect.centery - 25, 'orange', 10, 100, direction)
             self.projectiles.append(projectile)
