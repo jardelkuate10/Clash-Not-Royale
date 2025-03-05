@@ -1,8 +1,8 @@
 import pygame
 
 class Projectile:
-    def __init__(self, screen, x, y, color, speed, damage, direction):
-        self.screen = screen
+    def __init__(self, window, x, y, color, speed, damage, direction):
+        self.window = window
         self.x = x
         self.y = y
         self.color = color
@@ -13,7 +13,7 @@ class Projectile:
         self.rect = pygame.Rect(self.x, self.y, self.size, self.size)
 
     def draw(self):
-        pygame.draw.rect(self.screen, self.color, self.rect)
+        pygame.draw.rect(self.window, self.color, self.rect)
 
     def move(self):
         if self.direction == 'right':

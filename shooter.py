@@ -4,8 +4,8 @@ from base_character import BaseCharacter# Make sure you import the new Projectil
 
 
 class Shooter(BaseCharacter):
-    def __init__(self, screen, x, y, color, my_side, enemy_side):
-        super().__init__(screen, x, y, color, my_side, enemy_side)
+    def __init__(self, window, x, y, color,game_screen):
+        super().__init__(window, x, y, color, game_screen)
 
         self.projectiles = []
         #fire rate
@@ -25,7 +25,8 @@ class Shooter(BaseCharacter):
             if projectile.check_collision(self.enemy_side.towers):
                 self.projectiles.remove(projectile)  # Remove projectile after they collide
 
-    def fire_projectile(self):
+    # fire projectiles
+    def attack(self):
         keys = pygame.key.get_pressed()
         current_time = pygame.time.get_ticks()
 
@@ -33,5 +34,5 @@ class Shooter(BaseCharacter):
             self.last_shot_time = current_time  # Reset shot timer
 
             direction = 'up'
-            projectile = Projectile(self.screen, self.rect.centerx - 4, self.rect.centery - 25, 'orange', 10, 100, direction)
+            projectile = Projectile(self.window, self.rect.centerx - 4, self.rect.centery - 25, 'orange', 10, 100, direction)
             self.projectiles.append(projectile)

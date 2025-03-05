@@ -2,20 +2,21 @@ import pygame
 
 
 class BaseCharacter:
-    def __init__(self, screen, x, y, color, my_side, enemy_side):
+    def __init__(self, window, x, y, color, game_screen):
         self.size = 20
-        self.screen = screen
+        self.window = window
         self.color = color
         self.x = x
         self.y = y
-        self.my_side = my_side
-        self.enemy_side = enemy_side
+        self.game_screen = game_screen
+        self.my_side = game_screen.selector.my_side
+        self.enemy_side = game_screen.selector.enemy_side
         self.speed = 1
         self.dmg = 50
         self.rect = pygame.Rect(x, y, self.size, self.size )
 
     def draw(self):
-        pygame.draw.rect(self.screen, self.color, self.rect)
+        pygame.draw.rect(self.window, self.color, self.rect)
 
     def move(self):
         # Check keyboard state

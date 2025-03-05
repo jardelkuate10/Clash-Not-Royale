@@ -1,26 +1,21 @@
 import pygame
 
 from card_selector import CardSelector
-import main_tower
-from base_character import BaseCharacter
+from game_screen import GameScreen
 from side import Side
-from shooter import Shooter
 
 pygame.init()
 
 clock = pygame.time.Clock()
 fps = 60
-screen_width, game_width, screen_height, game_height = 600, 600, 1000, 800
-screen = pygame.display.set_mode((screen_width, screen_height))
+window_width, window_height = 600, 1000
+window = pygame.display.set_mode((window_width, window_height))
 pygame.display.set_caption('ClashNotRoyal')
 
+game_screen = GameScreen(window)
+
+
 running = True
-
-grass = (44, 134, 47)
-
-side1 = Side(screen, grass, 'top')
-side2 = Side(screen, grass, 'bottom')
-selector = CardSelector(screen, side2, side1)
 
 while running:
 
@@ -29,12 +24,10 @@ while running:
         if event.type == pygame.QUIT:
             running = False
         else:
-            selector.update(event)
+            game_screen.update(event)
 
-    screen.fill('black')
-    side1.draw()
-    side2.draw()
-    selector.draw()
+    window.fill('black')
+    game_screen.draw()
 
     pygame.display.flip()
 
