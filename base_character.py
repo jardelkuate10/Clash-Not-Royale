@@ -33,6 +33,7 @@ class BaseCharacter:
 
         self.update()
 
+    # test function
     def update(self):
         for tower in self.enemy_side.towers:
             if self.rect.colliderect(tower.rect):

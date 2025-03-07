@@ -9,14 +9,18 @@ main_size = 60
 side_size = 30
 tower_gap = 2*main_size
 
+
 class Side:
 
     def __init__(self, window, color, position):
         self.window = window
-        self.rect = None
         self.color = color
         self.position = position
+        self.rect = None
+        self.glow_surface = None
         self.towers = []
+
+        # tower coordinates
         self.main_x = game_width/2 - main_size/2
         self.s1_x = self.main_x - tower_gap - side_size
         self.s2_x = self.main_x + tower_gap + main_size
@@ -44,7 +48,3 @@ class Side:
         pygame.draw.rect(self.window, self.color, self.rect)
         for tower in self.towers:
             tower.draw()
-
-    def update(self):
-        for tower in self.towers:
-            tower.take_damage()

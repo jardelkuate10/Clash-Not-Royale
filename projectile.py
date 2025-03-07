@@ -15,6 +15,7 @@ class Projectile:
     def draw(self):
         pygame.draw.rect(self.window, self.color, self.rect)
 
+    # need to update to target enemy
     def move(self):
         if self.direction == 'right':
             self.rect.x += self.speed

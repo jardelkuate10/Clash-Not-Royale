@@ -8,8 +8,9 @@ class Shooter(BaseCharacter):
         super().__init__(window, x, y, color, game_screen)
 
         self.projectiles = []
-        #fire rate
-        self.fire_rate = 250  #tiem between last shoot
+
+        # fire rate
+        self.fire_rate = 250  # time between last shoot
         self.last_shot_time = 0  # Timestamp of the last fired shot
 
     def draw(self):
